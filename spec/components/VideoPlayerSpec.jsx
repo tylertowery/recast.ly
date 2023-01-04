@@ -8,17 +8,23 @@ describe ('VideoPlayer', function() {
 
   var cuteCatVideo, superCuteCatVideo, hackReactorVideo;
 
+  console.log('fake video data: ', fakeVideoData);
+
+
   // In order to leverage React's test utility function `findRenderedDOMComponentWithClass`
   // for stateless functional components, we must wrap them in a class component
   // Wrapper.jsx defined a Wrapper component to use in our tests
   // Read more here: https://github.com/facebook/react/issues/4972
 
   beforeEach(function() {
+
     cuteCatVideo = renderIntoDocument(
+      // console.log('this is cute cat video: ', cuteCatVideo);
       <Wrapper>
         <VideoPlayer video={window.fakeVideoData[0]} />
       </Wrapper>
     );
+
 
     superCuteCatVideo = renderIntoDocument(
       <Wrapper>
