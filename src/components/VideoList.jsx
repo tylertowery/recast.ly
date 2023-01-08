@@ -1,10 +1,9 @@
 import VideoListEntry from './VideoListEntry.js';
 
 const VideoList = ({ videos, handleClick }) => {
+  console.log('this is from videoList');
 
-  // const onClick = event => {
-  //   console.log('this was clicked ', event.target);
-  // };
+
 
   return (
     <div className="video-list">

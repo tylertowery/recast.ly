@@ -1,19 +1,25 @@
+import VideoDetails from './VideoDetails.js';
 
+const VideoPlayer = ({autoPlay, video, channel}) => {
+  console.log('this is from VideoPlayer');
 
-const VideoPlayer = ({video}) => {
   if (!video) {
     return <div className="video-player"></div>;
+  }
+
+  if (autoPlay) {
+    var url = 'https://www.youtube.com/embed/' + video.id.videoId + '?autoplay=1';
+  } else {
+    var url = 'https://www.youtube.com/embed/' + video.id.videoId;
   }
 
   return (
     <div className="video-player">
       <div className="embed-responsive embed-responsive-16by9">
-        <iframe className="embed-responsive-item" src={'https://www.youtube.com/embed/' + video.id.videoId} allowFullScreen></iframe>
+        <iframe className="embed-responsive-item" src={url} allowFullScreen></iframe>
       </div>
-      <div className="video-player-details">
-        <h3>{video.snippet.title}</h3>
-        <div>{video.snippet.description}</div>
-      </div>
+
+      <VideoDetails video={video} channel={channel}/>
     </div>
   );
 };

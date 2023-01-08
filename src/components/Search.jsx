@@ -17,7 +17,12 @@ const Search = ({handleGet}) => {
   };
 
   useEffect(() => {
-    handleGet(query);
+    let timeout = setTimeout(() => {
+      handleGet(query);
+    }, 500);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [query]);
 
 

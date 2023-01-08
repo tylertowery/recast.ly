@@ -99,3 +99,11 @@ h5 {
     margin-right: 20px;
   }
 }
+
+button {
+  color: black;
+}
+
+.clicked {
+  color: green;
+}
